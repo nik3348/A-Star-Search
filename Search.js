@@ -36,15 +36,4 @@ const traverse = function() {
 
     openList.push(child);
   });
-
-  for (let y = 0; y < ROWS; y++) {
-    for (let x = 0; x < COLS; x++) {
-      node = grid[x][y];
-      if (node.isBlocked) {
-        node.show(color(0));
-      } else {
-        node.show(color(255));
-      }
-    }
-  }
 }
