@@ -40,7 +40,6 @@ const Cell = function (i, j) {
     }
   }
 
-
   this.getDistance = function (child) {
     // Approximate Heuristic 
     const x = Math.abs(child.x - this.x);
