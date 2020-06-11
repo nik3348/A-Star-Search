@@ -1,5 +1,6 @@
 const ROWS = 20;
 const COLS = 35;
+const SHOW_NUMBERS = false;
 let CELLSIZE;
 
 let grid;
