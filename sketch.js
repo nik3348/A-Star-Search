@@ -1,13 +1,14 @@
 // Settings
 const ROWS = 20;
 const COLS = 38;
-const SHOW_NUMBERS = false;
+const SHOW_NUMBERS = true;
 const HEURISTIC = "md"
 let CELLSIZE;
 
 let grid;
 let source;
 let target;
+let current;
 let openList = Array();
 let closedList = Array();
 let blockedList = Array();
@@ -39,23 +40,5 @@ function setup() {
 
 function draw() {
   traverse();
-
-  for (let y = 0; y < ROWS; y++) {
-    for (let x = 0; x < COLS; x++) {
-      node = grid[x][y];
-      if (node.isBlocked) {
-        node.show(color(0));
-      } else {
-        node.show(color(255));
-      }
-    }
-  }
-
-  closedList.forEach(node => node.show(color(0, 0, 255)));
-  openList.forEach(node => node.show(color(255, 0, 100)));
-
-  source.show(color(0, 255, 0));
-  target.show(color(255, 0, 0));
+  colorGrid();
 }
-
-  // TODO: Last node -1 for some reason

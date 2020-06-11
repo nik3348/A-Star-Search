@@ -33,7 +33,6 @@ const Cell = function (i, j) {
           j < ROWS
         ) {
           if (!(i === this.x && j === this.y) && !grid[i][j].isBlocked) {
-            grid[i][j].parent = this;
             this.successors.push(grid[i][j]);
           }
         }
@@ -54,6 +53,5 @@ const Cell = function (i, j) {
         // Manhattan Distance
         return x + y;
     }
-
   }
 }
