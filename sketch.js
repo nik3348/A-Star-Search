@@ -1,8 +1,8 @@
 // Settings
 const ROWS = 20;
-const COLS = 35;
-const SHOW_NUMBERS = true;
-const HEURISTIC = "dd"
+const COLS = 38;
+const SHOW_NUMBERS = false;
+const HEURISTIC = "md"
 let CELLSIZE;
 
 let grid;
