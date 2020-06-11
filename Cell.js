@@ -15,9 +15,12 @@ const Cell = function(i, j) {
     rect(this.x * CELLSIZE, this.y * CELLSIZE, CELLSIZE, CELLSIZE);
     fill(color(0))
     textSize(15)
-    text(this.f, this.centerX - 5, this.centerY + 5);
-    text(this.h, this.centerX - CELLSIZE / 2, this.centerY + CELLSIZE / 2 - 2);
-    text(this.g, this.centerX - CELLSIZE / 2, this.centerY - CELLSIZE / 2 + 15);
+
+    if (SHOW_NUMBERS) {
+      text(this.f, this.centerX - 5, this.centerY + 5);
+      text(this.h, this.centerX - CELLSIZE / 2, this.centerY + CELLSIZE / 2 - 2);
+      text(this.g, this.centerX - CELLSIZE / 2, this.centerY - CELLSIZE / 2 + 15);
+    }
   }
 
   this.addSuccessors = function (grid) {
