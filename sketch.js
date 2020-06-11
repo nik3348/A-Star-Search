@@ -1,3 +1,4 @@
+// Settings
 const ROWS = 20;
 const COLS = 35;
 const SHOW_NUMBERS = true;
