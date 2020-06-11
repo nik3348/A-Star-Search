@@ -1,4 +1,4 @@
-const Cell = function(i, j) {
+const Cell = function (i, j) {
   this.x = i;
   this.y = j;
   this.centerX = this.x * CELLSIZE + CELLSIZE / 2
@@ -41,10 +41,19 @@ const Cell = function(i, j) {
     }
   }
 
-  // Approximate Heuristic - Diagonal Distance
+
   this.getDistance = function (child) {
+    // Approximate Heuristic 
     const x = Math.abs(child.x - this.x);
     const y = Math.abs(child.y - this.y);
-    return x > y ? x : y;
+    switch (HEURISTIC) {
+      case "dd":
+        // Diagonal Distance
+        return x > y ? x : y;
+      case "md":
+        // Manhattan Distance
+        return x + y;
+    }
+
   }
 }

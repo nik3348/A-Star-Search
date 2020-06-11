@@ -1,6 +1,7 @@
 const ROWS = 20;
 const COLS = 35;
-const SHOW_NUMBERS = false;
+const SHOW_NUMBERS = true;
+const HEURISTIC = "dd"
 let CELLSIZE;
 
 let grid;
