@@ -1,8 +1,8 @@
 // Settings
 const ROWS = 20;
 const COLS = 38;
-const SHOW_NUMBERS = true;
-const HEURISTIC = "md"
+const SHOW_NUMBERS = false;
+const HEURISTIC = "dd"
 let CELLSIZE;
 
 let grid;
@@ -36,6 +36,8 @@ function setup() {
   target = grid[COLS - 1][ROWS - 1]
 
   openList.push(source);
+
+  // frameRate(0.5);
 }
 
 function draw() {
