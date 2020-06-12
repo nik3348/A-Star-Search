@@ -33,7 +33,6 @@ const Cell = function (i, j) {
           j < ROWS
         ) {
           if (!(i === this.x && j === this.y) && !grid[i][j].isBlocked) {
-            grid[i][j].parent = this;
             this.successors.push(grid[i][j]);
           }
         }
@@ -41,19 +40,24 @@ const Cell = function (i, j) {
     }
   }
 
-
   this.getDistance = function (child) {
     // Approximate Heuristic 
     const x = Math.abs(child.x - this.x);
     const y = Math.abs(child.y - this.y);
+    const D2 = 1.4142;
+    const D = 1;
+    
     switch (HEURISTIC) {
+      case "ddu":
+        // Diagonal Distance - (Uniform cost)
+        return x > y ? x : y;
       case "dd":
         // Diagonal Distance
-        return x > y ? x : y;
+        // return D * (x + y) + (D2 - 2 * D) * Math.min(x, y);
+        return Math.round((D2 * Math.min(x, y) + D * (Math.max(x, y) - Math.min(x, y))) * 100000) / 100;
       case "md":
         // Manhattan Distance
         return x + y;
     }
-
   }
 }
