@@ -53,8 +53,8 @@ const Cell = function (i, j) {
         return x > y ? x : y;
       case "dd":
         // Diagonal Distance
-        // return D * (x + y) + (D2 - 2 * D) * Math.min(x, y);
-        return Math.round((D2 * Math.min(x, y) + D * (Math.max(x, y) - Math.min(x, y))) * 100000) / 100;
+        return Math.round((D * (x + y) + (D2 - 2 * D) * Math.min(x, y)) * 100000) / 100;
+        // return Math.round((D2 * Math.min(x, y) + D * (Math.max(x, y) - Math.min(x, y))) * 100000) / 100;
       case "md":
         // Manhattan Distance
         return x + y;
